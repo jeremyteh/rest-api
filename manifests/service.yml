@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+    name: "restapikubernetescluster-3bef"
+    labels:
+        app: "restapikubernetescluster-3bef"
+spec:
+    type: LoadBalancer
+    ports:
+    - port: 5000
+      targetPort: 5000
+      protocol: TCP
+      name: http
+    selector:
+        app: "restapikubernetescluster-3bef"
