@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "restapikubernetescluster-3bef"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "restapikubernetescluster-3bef"
+  template:
+    metadata:
+      labels:
+        app: "restapikubernetescluster-3bef"
+    spec:
+      containers:
+        - name: "restapikubernetescluster-3bef"
+          image: "restapicontainerregistry.azurecr.io/restapikubernetescluster"
+          ports:
+          - containerPort: 5000
