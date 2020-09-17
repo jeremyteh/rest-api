@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "restapicluster-bb91"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "restapicluster-bb91"
+  template:
+    metadata:
+      labels:
+        app: "restapicluster-bb91"
+    spec:
+      containers:
+        - name: "restapicluster-bb91"
+          image: "restapicr.azurecr.io/restapicluster"
+          ports:
+          - containerPort: 5000
